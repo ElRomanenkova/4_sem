@@ -1,0 +1,3 @@
+/home/liza/GitProjects/4_sem/temp/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/liza/GitProjects/4_sem/temp/cmake-build-debug/CMakeFiles/temp.dir
+/home/liza/GitProjects/4_sem/temp/cmake-build-debug/CMakeFiles/edit_cache.dir
