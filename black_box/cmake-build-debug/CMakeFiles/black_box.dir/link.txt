@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/black_box.dir/main.c.o CMakeFiles/black_box.dir/vector.c.o CMakeFiles/black_box.dir/list.c.o  -o black_box 
