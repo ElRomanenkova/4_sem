@@ -1,0 +1,3 @@
+/home/liza/CLionProjects/words/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/liza/CLionProjects/words/cmake-build-debug/CMakeFiles/words.dir
+/home/liza/CLionProjects/words/cmake-build-debug/CMakeFiles/edit_cache.dir
