@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/111/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/112/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/111/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/112/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/liza/GitProjects/4_sem/snake/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/111/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/112/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/111/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/112/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -122,6 +122,60 @@ snake: cmake_check_build_system
 snake/fast:
 	$(MAKE) -f CMakeFiles/snake.dir/build.make CMakeFiles/snake.dir/build
 .PHONY : snake/fast
+
+control.o: control.cpp.o
+
+.PHONY : control.o
+
+# target to build an object file
+control.cpp.o:
+	$(MAKE) -f CMakeFiles/snake.dir/build.make CMakeFiles/snake.dir/control.cpp.o
+.PHONY : control.cpp.o
+
+control.i: control.cpp.i
+
+.PHONY : control.i
+
+# target to preprocess a source file
+control.cpp.i:
+	$(MAKE) -f CMakeFiles/snake.dir/build.make CMakeFiles/snake.dir/control.cpp.i
+.PHONY : control.cpp.i
+
+control.s: control.cpp.s
+
+.PHONY : control.s
+
+# target to generate assembly for a file
+control.cpp.s:
+	$(MAKE) -f CMakeFiles/snake.dir/build.make CMakeFiles/snake.dir/control.cpp.s
+.PHONY : control.cpp.s
+
+game.o: game.cpp.o
+
+.PHONY : game.o
+
+# target to build an object file
+game.cpp.o:
+	$(MAKE) -f CMakeFiles/snake.dir/build.make CMakeFiles/snake.dir/game.cpp.o
+.PHONY : game.cpp.o
+
+game.i: game.cpp.i
+
+.PHONY : game.i
+
+# target to preprocess a source file
+game.cpp.i:
+	$(MAKE) -f CMakeFiles/snake.dir/build.make CMakeFiles/snake.dir/game.cpp.i
+.PHONY : game.cpp.i
+
+game.s: game.cpp.s
+
+.PHONY : game.s
+
+# target to generate assembly for a file
+game.cpp.s:
+	$(MAKE) -f CMakeFiles/snake.dir/build.make CMakeFiles/snake.dir/game.cpp.s
+.PHONY : game.cpp.s
 
 human.o: human.cpp.o
 
@@ -240,6 +294,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... snake"
+	@echo "... control.o"
+	@echo "... control.i"
+	@echo "... control.s"
+	@echo "... game.o"
+	@echo "... game.i"
+	@echo "... game.s"
 	@echo "... human.o"
 	@echo "... human.i"
 	@echo "... human.s"

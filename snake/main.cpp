@@ -2,9 +2,9 @@
 #include <memory>
 #include <cstdio>
 
-//#include "ui.h"
+#include "ui.h"
 //#include "snake.h"
-//#include "control.h"
+#include "control.h"
 
 int main() {
 
@@ -14,7 +14,7 @@ int main() {
         return 0;
     }
 
-    Game g;
+    Game * g ;
     Human h(g);
     Robot s1(g), s2(g), s3(g);
 

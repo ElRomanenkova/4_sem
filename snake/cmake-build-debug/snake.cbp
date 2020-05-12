@@ -84,6 +84,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/liza/GitProjects/4_sem/snake/control.cpp">
+			<Option target="snake"/>
+		</Unit>
+		<Unit filename="/home/liza/GitProjects/4_sem/snake/control.h">
+			<Option target="snake"/>
+		</Unit>
+		<Unit filename="/home/liza/GitProjects/4_sem/snake/game.cpp">
+			<Option target="snake"/>
+		</Unit>
+		<Unit filename="/home/liza/GitProjects/4_sem/snake/game.h">
+			<Option target="snake"/>
+		</Unit>
 		<Unit filename="/home/liza/GitProjects/4_sem/snake/human.cpp">
 			<Option target="snake"/>
 		</Unit>
