@@ -106,7 +106,6 @@ void VectorInsert (struct black_box * box, int ind, void * data) {
 }
 
 void VectorSwap (struct black_box * box, int ind1, int ind2) {
-
 }
 
 void VectorRemove (struct black_box * box, int ind) {

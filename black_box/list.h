@@ -13,4 +13,4 @@ void   ListRemove  (struct black_box * box, int ind);
 void   ListPrint   (struct black_box * box);
 void   ListDestroy (struct black_box * box);
 
-#endif //BLACK_BOX_LIST_H
+#endif

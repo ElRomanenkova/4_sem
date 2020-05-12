@@ -16,4 +16,4 @@ struct black_box {
 
 };
 
-#endif //BLACK_BOX_BLACK_BOX_H
+#endif

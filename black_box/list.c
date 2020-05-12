@@ -133,7 +133,6 @@ void ListInsert (struct black_box * box, int ind, void * data) {
 }
 
 void ListSwap (struct black_box * box, int ind1, int ind2) {
-
 }
 
 void ListRemove (struct black_box * box, int ind) {

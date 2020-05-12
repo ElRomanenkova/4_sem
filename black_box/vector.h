@@ -13,4 +13,4 @@ void   VectorRemove  (struct black_box * box, int ind);
 void   VectorPrint   (struct black_box * box);
 void   VectorDestroy (struct black_box * box);
 
-#endif //BLACK_BOX_VECTOR_H
+#endif
