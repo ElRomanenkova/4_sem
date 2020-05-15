@@ -10,12 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="51a4643f-55e0-40d7-915d-83ffbda6d21b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/black_box.h" beforeDir="false" afterPath="$PROJECT_DIR$/black_box.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/list.c" beforeDir="false" afterPath="$PROJECT_DIR$/list.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/list.h" beforeDir="false" afterPath="$PROJECT_DIR$/list.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vector.c" beforeDir="false" afterPath="$PROJECT_DIR$/vector.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vector.h" beforeDir="false" afterPath="$PROJECT_DIR$/vector.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,9 +34,6 @@
     <expand />
     <select />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="black_box" />
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -49,7 +41,6 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -79,7 +70,8 @@
       <workItem from="1582746743607" duration="6945000" />
       <workItem from="1584692437367" duration="84000" />
       <workItem from="1586451902700" duration="1665000" />
-      <workItem from="1589242906716" duration="874000" />
+      <workItem from="1589242906716" duration="2101000" />
+      <workItem from="1589528875858" duration="8000" />
     </task>
     <servers />
   </component>
@@ -91,10 +83,10 @@
       <screen x="67" y="35" width="1853" height="1045" />
     </state>
     <state x="590" y="341" width="797" height="431" key="#com.intellij.fileTypes.FileTypeChooser/67.35.1853.1045@67.35.1853.1045" timestamp="1582015717485" />
-    <state x="722" y="257" key="FileChooserDialogImpl" timestamp="1582046259042">
+    <state x="722" y="257" key="FileChooserDialogImpl" timestamp="1589269252267">
       <screen x="67" y="35" width="1853" height="1045" />
     </state>
-    <state x="722" y="257" key="FileChooserDialogImpl/67.35.1853.1045@67.35.1853.1045" timestamp="1582046259042" />
+    <state x="722" y="257" key="FileChooserDialogImpl/67.35.1853.1045@67.35.1853.1045" timestamp="1589269252267" />
     <state width="1791" height="259" key="GridCell.Tab.0.bottom" timestamp="1586634039667">
       <screen x="67" y="35" width="1853" height="1045" />
     </state>
