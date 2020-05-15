@@ -48,10 +48,10 @@ RM = /snap/clion/112/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/liza/CLionProjects/test_2
+CMAKE_SOURCE_DIR = /home/liza/CLionProjects/test_3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/liza/CLionProjects/test_2/cmake-build-debug
+CMAKE_BINARY_DIR = /home/liza/CLionProjects/test_3/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/liza/CLionProjects/test_2/cmake-build-debug/CMakeFiles /home/liza/CLionProjects/test_2/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liza/CLionProjects/test_3/cmake-build-debug/CMakeFiles /home/liza/CLionProjects/test_3/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/liza/CLionProjects/test_2/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/liza/CLionProjects/test_3/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test_2
+# Target rules for targets named test_3
 
 # Build rule for target.
-test_2: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_2
-.PHONY : test_2
+test_3: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_3
+.PHONY : test_3
 
 # fast build rule for target.
-test_2/fast:
-	$(MAKE) -f CMakeFiles/test_2.dir/build.make CMakeFiles/test_2.dir/build
-.PHONY : test_2/fast
+test_3/fast:
+	$(MAKE) -f CMakeFiles/test_3.dir/build.make CMakeFiles/test_3.dir/build
+.PHONY : test_3/fast
 
 main.o: main.cpp.o
 
@@ -129,7 +129,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/test_2.dir/build.make CMakeFiles/test_2.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/test_3.dir/build.make CMakeFiles/test_3.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -138,7 +138,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/test_2.dir/build.make CMakeFiles/test_2.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/test_3.dir/build.make CMakeFiles/test_3.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -147,7 +147,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/test_2.dir/build.make CMakeFiles/test_2.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/test_3.dir/build.make CMakeFiles/test_3.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -158,7 +158,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... test_2"
+	@echo "... test_3"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
