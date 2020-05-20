@@ -1,3 +1,4 @@
+/*
 #include <termios.h>
 #include <vector>
 #include <sys/ioctl.h>
@@ -49,4 +50,34 @@ private:
 
     //std::vector<event_fn> events;
     //std::vector<std::pair<int, timer_fn>> timers;
+};
+*/
+#pragma once
+
+#include "ui.h"
+
+#include <termios.h>
+
+class Tui : public View {
+public:
+    Tui();
+    ~Tui();
+
+    //Keypressable * onkey_delegater;
+
+    void snakepainter(Coord c, Dir d);
+    void rabbitpainter(Coord c);
+
+    void Draw();
+    void Run();
+    void Cls();
+    void Gotoxy(int r, int c);
+    int minx();
+    int miny();
+    void sizeofwin();
+
+private:
+    struct termios old;
+    void Xline(int y);
+    void Yline(int x);
 };

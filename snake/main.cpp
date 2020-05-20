@@ -1,3 +1,4 @@
+/*
 #include <iostream>
 #include <memory>
 #include <cstdio>
@@ -19,4 +20,44 @@ int main() {
     Robot s1(g), s2(g), s3(g);
 
     v->run(g);
+}
+*/
+//#pragma once
+#include <stdio.h>
+#include <memory>
+
+#include "ui.h"
+#include "game.h"
+#include "control.h"
+#include "human.h"
+#include "tui.h"
+#include "AI.h"
+
+
+int main() {
+    srand(time(NULL));
+
+    std::unique_ptr<View> v(View::get());
+    if (!v) {
+        fprintf(stderr, "Cannot init UI\n");
+        return 0;
+    }
+
+//    View * v = View::get();
+    Game * g = Game::get();
+    Snake s;
+    Human h(&s);
+    Snake * s2 = new Snake();
+    AI ai(s2);
+
+    g->add(&s);
+    g->add(s2);
+//    g->rabbits.back().first = s2->body.front().first + 1;
+//    g->rabbits.back().second = s2->body.front().second;
+    v->set_model(g);
+    v->Draw();
+    v->Run();
+    v->~View();
+
+    return 0;
 }

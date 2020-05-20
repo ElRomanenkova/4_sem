@@ -135,6 +135,45 @@ CMakeFiles/snake.dir/game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/snake.dir/game.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/liza/GitProjects/4_sem/snake/game.cpp -o CMakeFiles/snake.dir/game.cpp.s
 
+CMakeFiles/snake.dir/AI.cpp.o: CMakeFiles/snake.dir/flags.make
+CMakeFiles/snake.dir/AI.cpp.o: ../AI.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/liza/GitProjects/4_sem/snake/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/snake.dir/AI.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/snake.dir/AI.cpp.o -c /home/liza/GitProjects/4_sem/snake/AI.cpp
+
+CMakeFiles/snake.dir/AI.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/snake.dir/AI.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/liza/GitProjects/4_sem/snake/AI.cpp > CMakeFiles/snake.dir/AI.cpp.i
+
+CMakeFiles/snake.dir/AI.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/snake.dir/AI.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/liza/GitProjects/4_sem/snake/AI.cpp -o CMakeFiles/snake.dir/AI.cpp.s
+
+CMakeFiles/snake.dir/keypressable.cpp.o: CMakeFiles/snake.dir/flags.make
+CMakeFiles/snake.dir/keypressable.cpp.o: ../keypressable.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/liza/GitProjects/4_sem/snake/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/snake.dir/keypressable.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/snake.dir/keypressable.cpp.o -c /home/liza/GitProjects/4_sem/snake/keypressable.cpp
+
+CMakeFiles/snake.dir/keypressable.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/snake.dir/keypressable.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/liza/GitProjects/4_sem/snake/keypressable.cpp > CMakeFiles/snake.dir/keypressable.cpp.i
+
+CMakeFiles/snake.dir/keypressable.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/snake.dir/keypressable.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/liza/GitProjects/4_sem/snake/keypressable.cpp -o CMakeFiles/snake.dir/keypressable.cpp.s
+
+CMakeFiles/snake.dir/gui.cpp.o: CMakeFiles/snake.dir/flags.make
+CMakeFiles/snake.dir/gui.cpp.o: ../gui.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/liza/GitProjects/4_sem/snake/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/snake.dir/gui.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/snake.dir/gui.cpp.o -c /home/liza/GitProjects/4_sem/snake/gui.cpp
+
+CMakeFiles/snake.dir/gui.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/snake.dir/gui.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/liza/GitProjects/4_sem/snake/gui.cpp > CMakeFiles/snake.dir/gui.cpp.i
+
+CMakeFiles/snake.dir/gui.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/snake.dir/gui.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/liza/GitProjects/4_sem/snake/gui.cpp -o CMakeFiles/snake.dir/gui.cpp.s
+
 # Object files for target snake
 snake_OBJECTS = \
 "CMakeFiles/snake.dir/main.cpp.o" \
@@ -142,7 +181,10 @@ snake_OBJECTS = \
 "CMakeFiles/snake.dir/ui.cpp.o" \
 "CMakeFiles/snake.dir/human.cpp.o" \
 "CMakeFiles/snake.dir/control.cpp.o" \
-"CMakeFiles/snake.dir/game.cpp.o"
+"CMakeFiles/snake.dir/game.cpp.o" \
+"CMakeFiles/snake.dir/AI.cpp.o" \
+"CMakeFiles/snake.dir/keypressable.cpp.o" \
+"CMakeFiles/snake.dir/gui.cpp.o"
 
 # External object files for target snake
 snake_EXTERNAL_OBJECTS =
@@ -153,9 +195,12 @@ snake: CMakeFiles/snake.dir/ui.cpp.o
 snake: CMakeFiles/snake.dir/human.cpp.o
 snake: CMakeFiles/snake.dir/control.cpp.o
 snake: CMakeFiles/snake.dir/game.cpp.o
+snake: CMakeFiles/snake.dir/AI.cpp.o
+snake: CMakeFiles/snake.dir/keypressable.cpp.o
+snake: CMakeFiles/snake.dir/gui.cpp.o
 snake: CMakeFiles/snake.dir/build.make
 snake: CMakeFiles/snake.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/liza/GitProjects/4_sem/snake/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable snake"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/liza/GitProjects/4_sem/snake/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable snake"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/snake.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -1,13 +1,14 @@
 #pragma once
+
 #include <stdio.h>
+#include "game.h"
 
-class Snake;
+//class Snake;
 
-class Control
-{
+class Control {
 public:
-    Control(Snake* s);
+    Control(Snake * s);
     ~Control();
 
-    Snake* snake;
+    Snake * snake;
 };

@@ -1,13 +1,14 @@
 #pragma once
+
 #include <stdio.h>
-#include "game.h"
 #include "control.h"
-#include "key.h"
+#include "keypressable.h"
 
 
-class Human : public Control, public Key {
+class Human : public Control, public Keypressable {
 public:
-    Human(Snake* s);
+    Human(Snake * s);
     ~Human();
+//    bool onkey(char key);
     void onkey(char key);
 };

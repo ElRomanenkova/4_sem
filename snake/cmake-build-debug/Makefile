@@ -123,6 +123,33 @@ snake/fast:
 	$(MAKE) -f CMakeFiles/snake.dir/build.make CMakeFiles/snake.dir/build
 .PHONY : snake/fast
 
+AI.o: AI.cpp.o
+
+.PHONY : AI.o
+
+# target to build an object file
+AI.cpp.o:
+	$(MAKE) -f CMakeFiles/snake.dir/build.make CMakeFiles/snake.dir/AI.cpp.o
+.PHONY : AI.cpp.o
+
+AI.i: AI.cpp.i
+
+.PHONY : AI.i
+
+# target to preprocess a source file
+AI.cpp.i:
+	$(MAKE) -f CMakeFiles/snake.dir/build.make CMakeFiles/snake.dir/AI.cpp.i
+.PHONY : AI.cpp.i
+
+AI.s: AI.cpp.s
+
+.PHONY : AI.s
+
+# target to generate assembly for a file
+AI.cpp.s:
+	$(MAKE) -f CMakeFiles/snake.dir/build.make CMakeFiles/snake.dir/AI.cpp.s
+.PHONY : AI.cpp.s
+
 control.o: control.cpp.o
 
 .PHONY : control.o
@@ -177,6 +204,33 @@ game.cpp.s:
 	$(MAKE) -f CMakeFiles/snake.dir/build.make CMakeFiles/snake.dir/game.cpp.s
 .PHONY : game.cpp.s
 
+gui.o: gui.cpp.o
+
+.PHONY : gui.o
+
+# target to build an object file
+gui.cpp.o:
+	$(MAKE) -f CMakeFiles/snake.dir/build.make CMakeFiles/snake.dir/gui.cpp.o
+.PHONY : gui.cpp.o
+
+gui.i: gui.cpp.i
+
+.PHONY : gui.i
+
+# target to preprocess a source file
+gui.cpp.i:
+	$(MAKE) -f CMakeFiles/snake.dir/build.make CMakeFiles/snake.dir/gui.cpp.i
+.PHONY : gui.cpp.i
+
+gui.s: gui.cpp.s
+
+.PHONY : gui.s
+
+# target to generate assembly for a file
+gui.cpp.s:
+	$(MAKE) -f CMakeFiles/snake.dir/build.make CMakeFiles/snake.dir/gui.cpp.s
+.PHONY : gui.cpp.s
+
 human.o: human.cpp.o
 
 .PHONY : human.o
@@ -203,6 +257,33 @@ human.s: human.cpp.s
 human.cpp.s:
 	$(MAKE) -f CMakeFiles/snake.dir/build.make CMakeFiles/snake.dir/human.cpp.s
 .PHONY : human.cpp.s
+
+keypressable.o: keypressable.cpp.o
+
+.PHONY : keypressable.o
+
+# target to build an object file
+keypressable.cpp.o:
+	$(MAKE) -f CMakeFiles/snake.dir/build.make CMakeFiles/snake.dir/keypressable.cpp.o
+.PHONY : keypressable.cpp.o
+
+keypressable.i: keypressable.cpp.i
+
+.PHONY : keypressable.i
+
+# target to preprocess a source file
+keypressable.cpp.i:
+	$(MAKE) -f CMakeFiles/snake.dir/build.make CMakeFiles/snake.dir/keypressable.cpp.i
+.PHONY : keypressable.cpp.i
+
+keypressable.s: keypressable.cpp.s
+
+.PHONY : keypressable.s
+
+# target to generate assembly for a file
+keypressable.cpp.s:
+	$(MAKE) -f CMakeFiles/snake.dir/build.make CMakeFiles/snake.dir/keypressable.cpp.s
+.PHONY : keypressable.cpp.s
 
 main.o: main.cpp.o
 
@@ -294,15 +375,24 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... snake"
+	@echo "... AI.o"
+	@echo "... AI.i"
+	@echo "... AI.s"
 	@echo "... control.o"
 	@echo "... control.i"
 	@echo "... control.s"
 	@echo "... game.o"
 	@echo "... game.i"
 	@echo "... game.s"
+	@echo "... gui.o"
+	@echo "... gui.i"
+	@echo "... gui.s"
 	@echo "... human.o"
 	@echo "... human.i"
 	@echo "... human.s"
+	@echo "... keypressable.o"
+	@echo "... keypressable.i"
+	@echo "... keypressable.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

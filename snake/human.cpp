@@ -4,8 +4,8 @@
 #include "human.h"
 #include "ui.h"
 
-Human::Human(Snake* s): Control(s) {
-    Ui* v = Ui::get();
+Human::Human(Snake * s): Control(s) {
+    View* v = View::get();
     v->setonkey(this);
 }
 
@@ -39,4 +39,5 @@ void Human::onkey(char key) {
         default:
             break;
     }
+
 }

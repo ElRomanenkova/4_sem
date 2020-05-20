@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/liza/GitProjects/4_sem/snake/AI.cpp">
+			<Option target="snake"/>
+		</Unit>
+		<Unit filename="/home/liza/GitProjects/4_sem/snake/AI.h">
+			<Option target="snake"/>
+		</Unit>
 		<Unit filename="/home/liza/GitProjects/4_sem/snake/control.cpp">
 			<Option target="snake"/>
 		</Unit>
@@ -96,10 +102,22 @@
 		<Unit filename="/home/liza/GitProjects/4_sem/snake/game.h">
 			<Option target="snake"/>
 		</Unit>
+		<Unit filename="/home/liza/GitProjects/4_sem/snake/gui.cpp">
+			<Option target="snake"/>
+		</Unit>
+		<Unit filename="/home/liza/GitProjects/4_sem/snake/gui.h">
+			<Option target="snake"/>
+		</Unit>
 		<Unit filename="/home/liza/GitProjects/4_sem/snake/human.cpp">
 			<Option target="snake"/>
 		</Unit>
 		<Unit filename="/home/liza/GitProjects/4_sem/snake/human.h">
+			<Option target="snake"/>
+		</Unit>
+		<Unit filename="/home/liza/GitProjects/4_sem/snake/keypressable.cpp">
+			<Option target="snake"/>
+		</Unit>
+		<Unit filename="/home/liza/GitProjects/4_sem/snake/keypressable.h">
 			<Option target="snake"/>
 		</Unit>
 		<Unit filename="/home/liza/GitProjects/4_sem/snake/main.cpp">
