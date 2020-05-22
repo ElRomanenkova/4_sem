@@ -110,13 +110,54 @@ void Gui::Draw() { //**** some changes
 }
 
 void Gui::snakepainter(Coord c, Dir d) {  //*****
-    //Gotoxy(c.first, c.second);
-    //putchar("^V><*"[d]);
+    switch (d) {
+        case DOWN: {
+            head_h.setTextureRect(sf::IntRect(0, 0, 30, 30));
+            head_h.setPosition(c.first * CELL_SIZE, c.second * CELL_SIZE);
+            window.draw(head_h);
+//            return;
+            break;
+        }
+
+        case UP: {
+            head_h.setTextureRect(sf::IntRect(0, 30, 30, -30));
+            head_h.setPosition(c.first * CELL_SIZE, c.second * CELL_SIZE);
+            window.draw(head_h);
+//            return;
+            break;
+        }
+
+        case LEFT: {
+            head_l_h.setTextureRect(sf::IntRect(0, 0, 30, 30));
+            head_l_h.setPosition(c.first * CELL_SIZE, c.second * CELL_SIZE);
+            window.draw(head_l_h);
+//            return;
+            break;
+        }
+
+
+        case RIGHT: {
+            head_l_h.setTextureRect(sf::IntRect(30, 0, -30, 30));
+            head_l_h.setPosition(c.first * CELL_SIZE, c.second * CELL_SIZE);
+            window.draw(head_l_h);
+//            return;
+            break;
+        }
+
+        default: {
+            body_h.setPosition(c.first * CELL_SIZE, c.second * CELL_SIZE);
+            window.draw(body_h);
+//            return;
+            break;
+        }
+
+    }
+
 }
 
 void Gui::rabbitpainter(Coord c) { //*****
-    //Gotoxy(c.first, c.second);
-    //std::cout<<"r";
+    mush.setPosition(c.first * CELL_SIZE, c.second * CELL_SIZE);
+    window.draw(mush);
 }
 
 

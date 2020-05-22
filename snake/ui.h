@@ -108,8 +108,8 @@ public:
 
     static View * get();
 
-    void virtual snakepainter(Coord c, Dir d) = 0;
-    void virtual rabbitpainter(Coord c) = 0;
+    virtual void snakepainter(Coord c, Dir d) = 0;
+    virtual void rabbitpainter(Coord c) = 0;
 
     void setonkey(Keypressable * key)
     {

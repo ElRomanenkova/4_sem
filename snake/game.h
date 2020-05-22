@@ -124,6 +124,8 @@ enum Dir {
 using SnakePainter = std::function<void(Coord, Dir)>;
 using RabbbitPainter = std::function<void(Coord)>;
 
+class Game;
+
 class Snake {
 public:
     Snake();
@@ -137,7 +139,7 @@ public:
     Snake(const Snake & s): dir(s.dir), body(s.body)
     {}
 
-    Snake & operator = (const Snake & s){
+    Snake & operator = (const Snake & s) {
         dir = s.dir;
         body = s.body;
         return * this;
@@ -146,6 +148,7 @@ public:
     std::list <Coord> body;
     void set_direction(Dir d);
     Dir dir;
+//    int brand;
 };
 
 
@@ -154,11 +157,14 @@ protected:
     Game();
 
 public:
+    enum {
+        MAX_RABBITS = 20,
+    };
+
     static Game * inst;
+    static Game * get();
 
     void move();
-
-    static Game * get();
 
     void paint(SnakePainter ps, RabbbitPainter pr);
     void add(Snake * s);

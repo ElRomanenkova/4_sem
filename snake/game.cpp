@@ -20,7 +20,7 @@ Game::Game()
 //    rabbits.push_back(r);
 
 
-    for(int i = 0; i < 15; i ++) {
+    for(int i = 0; i < MAX_RABBITS; i ++) {
         rabbitgenerate();
         View::get()->ontime_deligater.pop_back();
     }
@@ -31,10 +31,12 @@ Game::Game()
     t = {RAABBIT_TIME, 0};
     v->setontimer(t, std::bind(&Game::rabbitgenerate, this));
 
+//    snake_number = 5;
+
 }
 
-Snake::Snake()
-{
+Snake::Snake() {
+
     alive = true;
     dir = UP;
     Coord c = Game::get()->GetFreeCoord();
@@ -45,15 +47,15 @@ Snake::Snake()
     //body.push_back(Coord(++c.first, c.second));
 }
 
-void Snake::set_direction(Dir d)
-{
+void Snake::set_direction(Dir d) {
+
     if((d == LEFT || d == RIGHT) && (dir == LEFT || dir == RIGHT))  return;
     if((d == UP || d == DOWN) && (dir == UP || dir == DOWN))  return;
     dir = d;
 }
 
-void Game::paint(SnakePainter ps, RabbbitPainter pr)
-{
+void Game::paint(SnakePainter ps, RabbbitPainter pr) {
+
     for(const auto s : snakes) {
 
         bool head = false;
@@ -69,12 +71,12 @@ void Game::paint(SnakePainter ps, RabbbitPainter pr)
     }
 }
 
-Coord Game::GetFreeCoord()
-{
+Coord Game::GetFreeCoord() {
+
     Coord c;
 
-    while(1)
-    {
+    while(1) {
+
         c.first = rand() % View::get()->x;
         c.second = rand() % View::get()->y;
 
@@ -94,10 +96,10 @@ Coord Game::GetFreeCoord()
 
 Game * Game::inst;
 
-Game * Game::get()
-{
+Game * Game::get() {
+
     if(inst != nullptr)    return Game::inst;
-    Game::inst = new Game;
+    Game::inst = new Game();
     return Game::inst;
 }
 
@@ -109,23 +111,23 @@ void Game::add(Snake * s)
 //    snake_number++;
 }
 
-void Game::move()
-{
+void Game::move() {
+
     bool all_die = true;
 
     for(auto s: snakes)
-        if(s->alive)
-        {
+        if(s->alive) {
             all_die = false;
             break;
         }
 
-    if(all_die)
-    {
+    if(all_die) {
         View::get()->~View();
     }
 
     View::get()->AI_deligater->OnMove();
+//    View::get()->AI_delegater_clever->on_move_clever();
+
 
     for(auto s: snakes)
         if(s->alive)
@@ -138,8 +140,8 @@ void Game::move()
     View::get()->setontimer(t, std::bind(&Game::move, this));
 }
 
-void Game::rabbitgenerate()
-{
+void Game::rabbitgenerate() {
+
     Coord c;
     srand(1);
 
@@ -165,8 +167,7 @@ void Game::rabbitgenerate()
     }
 }
 
-bool Game::checkplace(Coord c)
-{
+bool Game::checkplace(Coord c) {
     for(const auto s : snakes)
         for(const auto & sb : s->body)
             if(c == sb) return false;
@@ -184,8 +185,8 @@ bool Game::checkplace(Coord c)
 }
 
 
-Coord Game::near(Coord c)
-{
+Coord Game::near(Coord c) {
+
     if(rabbits.size() == 0) return Coord(0, 0);
 
     Coord r(0, 0);
@@ -232,11 +233,10 @@ char Game::checkplacesnake(Coord c)
     return ' ';
 }
 
-void Game::KillRabbit(Coord c)
-{
+void Game::KillRabbit(Coord c) {
+
     for(const auto & r : rabbits)
-        if(c == r)
-        {
+        if(c == r) {
             rabbits.remove(r);
             return;
         }
@@ -247,10 +247,9 @@ void Game::KillRabbit(Coord c)
 }
 
 
-void Snake::move()
-{
-    Coord a = body.front();
+void Snake::move() {
 
+    Coord a = body.front();
     a = NextPosition(dir, a);
 
     //body.push_front(a);
@@ -270,8 +269,7 @@ void Snake::move()
             //View::get()->~View();
             break;
 
-        case 'r':
-        {
+        case 'r': {
             Game::get()->KillRabbit(a);
             body.push_front(a);
             break;
@@ -283,15 +281,17 @@ void Snake::move()
 }
 
 
-Coord Snake::NextPosition(Dir d, Coord a)
-{
+Coord Snake::NextPosition(Dir d, Coord a) {
+
     switch (d) {
         case UP:
-            a.second --;
+//            a.second --;
+            a.second ++;
             break;
 
         case DOWN:
-            a.second ++;
+//            a.second ++;
+            a.second --;
             break;
 
         case LEFT:

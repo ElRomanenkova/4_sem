@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "game.h"
 
-//class Snake;
+class Snake;
 
 class Control {
 public:

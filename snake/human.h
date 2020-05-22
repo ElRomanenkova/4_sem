@@ -9,6 +9,6 @@ class Human : public Control, public Keypressable {
 public:
     Human(Snake * s);
     ~Human();
-//    bool onkey(char key);
-    void onkey(char key);
+    bool onkey(char key);
+//    void onkey(char key);
 };

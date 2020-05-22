@@ -5,14 +5,14 @@
 #include "ui.h"
 
 Human::Human(Snake * s): Control(s) {
-    View* v = View::get();
+    View * v = View::get();
     v->setonkey(this);
 }
 
 Human::~Human() {
 }
 
-void Human::onkey(char key) {
+bool Human::onkey(char key) {
     //Game * g = Game::get();
 
     switch (key) {
