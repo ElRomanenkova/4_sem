@@ -16,12 +16,9 @@ Control::~Control()
 #include "control.h"
 
 
-Control::Control(Snake * s)
-{
-    //View * v = View::get();
+Control::Control(Snake * s) {
     snake = s;
 }
 
-Control::~Control()
-{
+Control::~Control() {
 }

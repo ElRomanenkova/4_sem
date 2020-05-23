@@ -166,7 +166,6 @@ public:
     bool checkplace(Coord c);
     char checkplacesnake(Coord c);
     Coord near(Coord c);
-    Coord GetFreeCoord();
     void KillRabbit(Coord c);
 
 //private:

@@ -48,12 +48,10 @@ void AI::OnMove() const {
     }
 
     if(!ok)
-        for(auto p : d)
-        {
+        for(auto p : d) {
             snake->dir = p;
             Coord c = snake->NextPosition(p, snake->body.front());
             if(game->checkplacesnake(c) == ' ') {
-                //snake->dir = p;
                 break;
             }
         }

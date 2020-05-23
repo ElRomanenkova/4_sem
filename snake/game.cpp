@@ -10,8 +10,8 @@
 
 using namespace std::placeholders;
 
-Game::Game()
-{
+Game::Game() {
+
     View * v = View::get();
     struct timespec t;
 
@@ -37,29 +37,14 @@ Snake::Snake() {
 
     alive = true;
     dir = UP;
-//    Coord c = Game::get()->GetFreeCoord();
     Coord c;
 
-//    while(1) {
-
-        c.first = rand() % View::get()->x;
-        c.second = rand() % View::get()->y;
-
-//        if(c.first == 0 || c.first == 1)    c.first += 5;// worktime.tv_nsec % rand() % View::get()->x;
-//        if(c.second == 0 || c.second == 1)   c.second += 5;// worktime.tv_nsec % View::get()->y;
-//
-//        if(c.first == View::get()->x - 1)     c.first -= 5;
-//        if(c.second == View::get()->y - 1)     c.second -= 5;
-
-//        if(checkplace(c)) {
-//            break;
-//        }
-//    }
+    c.first = rand() % View::get()->x;
+    c.second = rand() % View::get()->y;
 
     for (int i = 0; i < 3; i++) {
         body.push_back(Coord(++c.first, c.second));
     }
-
 }
 
 void Snake::set_direction(Dir d) {
@@ -85,29 +70,6 @@ void Game::paint(SnakePainter ps, RabbbitPainter pr) {
         pr(r);
     }
 }
-
-//Coord Game::GetFreeCoord() {
-//
-//    Coord c;
-//
-//    while(1) {
-//
-//        c.first = rand() % View::get()->x;
-//        c.second = rand() % View::get()->y;
-//
-//        if(c.first == 0 || c.first == 1)    c.first += 5;// worktime.tv_nsec % rand() % View::get()->x;
-//        if(c.second == 0 || c.second == 1)   c.second += 5;// worktime.tv_nsec % View::get()->y;
-//
-//        if(c.first == View::get()->x - 1)     c.first -= 5;
-//        if(c.second == View::get()->y - 1)     c.second -= 5;
-//
-//        if(checkplace(c)) {
-//            return c;
-//        }
-//    }
-//    return c;
-//}
-
 
 Game * Game::inst;
 
@@ -195,20 +157,17 @@ Coord Game::near(Coord c) {
     return r;
 }
 
-int mod(int a)
-{
+int mod(int a) {
     if(a > 0)   return a;
     else return -a;
 }
 
-int Coord::distance(const Coord &c) const
-{
+int Coord::distance(const Coord &c) const {
     return mod(c.first - first) + mod(c.second - second);
 }
 
 
-char Game::checkplacesnake(Coord c)
-{
+char Game::checkplacesnake(Coord c) {
     for(const auto s : snakes)
         for(const auto & sb : s->body)
             if(c == sb)  return 's';

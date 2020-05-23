@@ -25,5 +25,5 @@ View * View::get() {
 
 View::~View() {
 //    instance = nullptr;
-    //delete[instance];
+//    delete[instance];
 }

@@ -15,8 +15,7 @@ static void sizechange(int y) {
     View::get()->Draw();
 }
 
-void Gui::sizeofwin()
-{
+void Gui::sizeofwin() {
     sf::Vector2u size = window.getSize();
 //    ioctl(1, TIOCGWINSZ, &size);
 //    x = 101;
@@ -27,17 +26,16 @@ void Gui::sizeofwin()
 }
 
 
-Gui::Gui() { //*******
+Gui::Gui() {
 
     window.create(sf::VideoMode(1920,1080), "Snake");
     sizeofwin();
 
-    t_bort.loadFromFile("./images/bort.jpg");
+    t_bort.loadFromFile("./images/bort.png");
     bort.setTexture(t_bort);
 
     t_ground.loadFromFile("./images/grass.png");
     ground.setTexture(t_ground);
-
 
     t_head.loadFromFile("./images/head.png");
     head.setTexture(t_head);
@@ -50,24 +48,6 @@ Gui::Gui() { //*******
 
     t_mush.loadFromFile("./images/mush.png");
     mush.setTexture(t_mush);
-
-    t_head_h.loadFromFile("./images/HH.png");
-    head_h.setTexture(t_head_h);
-
-    t_head_l_h.loadFromFile("./images/HL.png");
-    head_l_h.setTexture(t_head_l_h);
-
-    t_body_h.loadFromFile("./images/HB.png");
-    body_h.setTexture(t_body_h);
-
-    t_head_2.loadFromFile("./images/head2.png");
-    head_2.setTexture(t_head_2);
-
-    t_head_l_2.loadFromFile("./images/head_l2.png");
-    head_l_2.setTexture(t_head_l_2);
-
-    t_body_2.loadFromFile("./images/body2.png");
-    body_2.setTexture(t_body_2);
 }
 
 
@@ -76,7 +56,7 @@ Gui::~Gui() {
 }
 
 
-void Gui::Draw() { //**** some changes
+void Gui::Draw() {
     sizeofwin();
 
     window.clear();
@@ -88,10 +68,10 @@ void Gui::Draw() { //**** some changes
         }
 
     Xline(0);
-    Xline(miny() - 1);
+    Xline(y - 1);
 
     Yline(0);
-    Yline(minx() - 1);
+    Yline(x - 1);
 
     //Gotoxy(minx()/2, miny()/2);
 
@@ -100,41 +80,40 @@ void Gui::Draw() { //**** some changes
     fflush(stdout);
 }
 
-void Gui::snakepainter(Coord c, Dir d) {  //*****
+void Gui::snakepainter(Coord c, Dir d) {
     switch (d) {
         case DOWN: {
-            head_h.setTextureRect(sf::IntRect(0, 0, 30, 30));
-            head_h.setPosition(c.first * CELL_SIZE, c.second * CELL_SIZE);
-            window.draw(head_h);
+            head.setTextureRect(sf::IntRect(0, 0, 30, 30));
+            head.setPosition(c.first * CELL_SIZE, c.second * CELL_SIZE);
+            window.draw(head);
             break;
         }
 
         case UP: {
-            head_h.setTextureRect(sf::IntRect(0, 30, 30, -30));
-            head_h.setPosition(c.first * CELL_SIZE, c.second * CELL_SIZE);
-            window.draw(head_h);
+            head.setTextureRect(sf::IntRect(0, 30, 30, -30));
+            head.setPosition(c.first * CELL_SIZE, c.second * CELL_SIZE);
+            window.draw(head);
             break;
         }
 
         case LEFT: {
-            head_l_h.setTextureRect(sf::IntRect(0, 0, 30, 30));
-            head_l_h.setPosition(c.first * CELL_SIZE, c.second * CELL_SIZE);
-            window.draw(head_l_h);
-//            return;
+            head_l.setTextureRect(sf::IntRect(0, 0, 30, 30));
+            head_l.setPosition(c.first * CELL_SIZE, c.second * CELL_SIZE);
+            window.draw(head_l);
             break;
         }
 
 
         case RIGHT: {
-            head_l_h.setTextureRect(sf::IntRect(30, 0, -30, 30));
-            head_l_h.setPosition(c.first * CELL_SIZE, c.second * CELL_SIZE);
-            window.draw(head_l_h);
+            head_l.setTextureRect(sf::IntRect(30, 0, -30, 30));
+            head_l.setPosition(c.first * CELL_SIZE, c.second * CELL_SIZE);
+            window.draw(head_l);
             break;
         }
 
         default: {
-            body_h.setPosition(c.first * CELL_SIZE, c.second * CELL_SIZE);
-            window.draw(body_h);
+            body.setPosition(c.first * CELL_SIZE, c.second * CELL_SIZE);
+            window.draw(body);
             break;
         }
 
@@ -142,7 +121,7 @@ void Gui::snakepainter(Coord c, Dir d) {  //*****
 
 }
 
-void Gui::rabbitpainter(Coord c) { //*****
+void Gui::rabbitpainter(Coord c) {
     mush.setPosition(c.first * CELL_SIZE, c.second * CELL_SIZE);
     window.draw(mush);
 }
@@ -150,7 +129,7 @@ void Gui::rabbitpainter(Coord c) { //*****
 
 void Gui::Xline(int y) {
 
-    for (int i = 0; i < minx(); i ++) {
+    for (int i = 0; i < x; i ++) {
         bort.setPosition(i * CELL_SIZE, y * CELL_SIZE);
         window.draw(bort);
 //        printf("#");
@@ -159,7 +138,7 @@ void Gui::Xline(int y) {
 
 void Gui::Yline(int x) {
 
-    for (int i = 1; i <= miny(); i ++) {
+    for (int i = 1; i <= y; i ++) {
         bort.setPosition(x * CELL_SIZE, i * CELL_SIZE);
         window.draw(bort);
 //        printf("#");
@@ -174,53 +153,39 @@ void Gui::getkey(long time) {
     timer = clock.getElapsedTime();
     char c;
 
-    sf::Event event;
-
     while (timer.asMicroseconds() / 1000 < time) {
 
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
             c = 'd';
             onkey_delegater->onkey(c);
-//                return 1;
         }
-
         else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
             c = 'a';
             onkey_delegater->onkey(c);
-//                return 1;
         }
-
         else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
             c = 'q';
 //            return 0;
         }
-
         else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up) || sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
             c = 's';
             onkey_delegater->onkey(c);
-//                return 1;
         }
-
         else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down) || sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
             c = 'w';
             onkey_delegater->onkey(c);
-//                return 1;
         }
 
         timer = clock.getElapsedTime();
     }
 
-//    return 0;
 }
 
 void Gui::Run() {
 //    printf("Hello, world. Snake\n");
-//    char c;
     Draw();
 
-    struct pollfd arr;
     struct timespec start_time, finish_time, worktime;
-
 
 //    int x = View::get()->x;
 
@@ -229,9 +194,6 @@ void Gui::Run() {
         while (window.pollEvent(event)) {
             if(event.type == sf::Event::Closed)
                 window.close();
-//            if (event.type == sf::Event::KeyPressed)
-//                if (event.key.code == sf::Keyboard::Q)
-//                    window.close();
         }
 
 //        arr.fd = 0 ;
@@ -282,14 +244,4 @@ void Gui::Run() {
         window.display();
     }
 
-}
-
-
-int Gui::minx() {
-    return x;
-}
-
-
-int Gui::miny() {
-    return y;
 }

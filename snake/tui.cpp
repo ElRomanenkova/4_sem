@@ -148,8 +148,7 @@ void Tui::Gotoxy(int r, int c)
 }
 
 
-void Tui::Run()
-{
+void Tui::Run() {
     //printf("Hello, world. Snake\n");
     char c;
     Draw();
