@@ -1,0 +1,89 @@
+digraph dump
+{
+	node [color = "#000000", shape = "box", fontsize = 20];
+	edge [color = "#000000", fontsize = 20];
+
+		root_nil [label = "root_nil", shape = "diamond", color = "#FFFFFF", fontcolor = "#000000"];
+		key_nil [label = "nil", shape = "diamond", color = "#FFFFFF", fontcolor = "#000000"];
+}
+digraph dump
+{
+	node [color = "#000000", shape = "box", fontsize = 20];
+	edge [color = "#000000", fontsize = 20];
+
+		root_nil [label = "root_nil", shape = "diamond", color = "#FFFFFF", fontcolor = "#000000"];
+		key_11 [label = "11", color = "#000000", style = "filled", fillcolor = "#000000", fontcolor = "#FFFFFF"];
+		key_11 -> root_nil[label = "parent"];
+		key_11 -> key_2 [label = "left"];
+		key_2 [label = "2", color = "#FF0000", style = "filled", fillcolor = "#FF0000", fontcolor = "#FFFFFF"];
+		key_2 -> key_11[label = "parent"];
+		key_2 -> key_nil [label = "left"];
+		key_2 -> key_nil [label = "right"];
+		key_11 -> key_14 [label = "right"];
+		key_nil [label = "nil", shape = "diamond", color = "#FFFFFF", fontcolor = "#000000"];
+}
+digraph dump
+{
+	node [color = "#000000", shape = "box", fontsize = 20];
+	edge [color = "#000000", fontsize = 20];
+
+		root_nil [label = "root_nil", shape = "diamond", color = "#FFFFFF", fontcolor = "#000000"];
+		key_11 [label = "11", color = "#000000", style = "filled", fillcolor = "#000000", fontcolor = "#FFFFFF"];
+		key_11 -> root_nil[label = "parent"];
+		key_11 -> key_2 [label = "left"];
+		key_nil [label = "nil", shape = "diamond", color = "#FFFFFF", fontcolor = "#000000"];
+}
+digraph dump
+{
+	node [color = "#000000", shape = "box", fontsize = 20];
+	edge [color = "#000000", fontsize = 20];
+
+		root_nil [label = "root_nil", shape = "diamond", color = "#FFFFFF", fontcolor = "#000000"];
+		key_11 [label = "11", color = "#000000", style = "filled", fillcolor = "#000000", fontcolor = "#FFFFFF"];
+		key_11 -> root_nil[label = "parent"];
+		key_11 -> key_2 [label = "left"];
+		key_2 [label = "2", color = "#FF0000", style = "filled", fillcolor = "#FF0000", fontcolor = "#FFFFFF"];
+		key_2 -> key_11[label = "parent"];
+		key_2 -> key_nil [label = "left"];
+		key_2 -> key_nil [label = "right"];
+		key_11 -> key_14 [label = "right"];
+		key_14 [label = "14", color = "#FF0000", style = "filled", fillcolor = "#FF0000", fontcolor = "#FFFFFF"];
+		key_14 -> key_11[label = "parent"];
+		key_14 -> key_nil [label = "left"];
+		key_nil [label = "nil", shape = "diamond", color = "#FFFFFF", fontcolor = "#000000"];
+}
+digraph dump
+{
+	node [color = "#000000", shape = "box", fontsize = 20];
+	edge [color = "#000000", fontsize = 20];
+
+		root_nil [label = "root_nil", shape = "diamond", color = "#FFFFFF", fontcolor = "#000000"];
+		key_11 [label = "11", color = "#000000", style = "filled", fillcolor = "#000000", fontcolor = "#FFFFFF"];
+		key_11 -> root_nil[label = "parent"];
+		key_11 -> key_2 [label = "left"];
+		key_2 [label = "2", color = "#FF0000", style = "filled", fillcolor = "#FF0000", fontcolor = "#FFFFFF"];
+		key_2 -> key_11[label = "parent"];
+		key_2 -> key_nil [label = "left"];
+		key_2 -> key_nil [label = "right"];
+		key_11 -> key_14 [label = "right"];
+		key_14 [label = "14", color = "#FF0000", style = "filled", fillcolor = "#FF0000", fontcolor = "#FFFFFF"];
+		key_14 -> key_11[label = "parent"];
+		key_nil [label = "nil", shape = "diamond", color = "#FFFFFF", fontcolor = "#000000"];
+}
+digraph dump
+{
+	node [color = "#000000", shape = "box", fontsize = 20];
+	edge [color = "#000000", fontsize = 20];
+
+		root_nil [label = "root_nil", shape = "diamond", color = "#FFFFFF", fontcolor = "#000000"];
+		key_11 [label = "11", color = "#000000", style = "filled", fillcolor = "#000000", fontcolor = "#FFFFFF"];
+		key_11 -> root_nil[label = "parent"];
+		key_11 -> key_2 [label = "left"];
+		key_2 [label = "2", color = "#FF0000", style = "filled", fillcolor = "#FF0000", fontcolor = "#FFFFFF"];
+		key_2 -> key_11[label = "parent"];
+		key_2 -> key_nil [label = "left"];
+		key_2 -> key_nil [label = "right"];
+		key_11 -> key_14 [label = "right"];
+		key_14 [label = "14", color = "#FF0000", style = "filled", fillcolor = "#FF0000", fontcolor = "#FFFFFF"];
+		key_nil [label = "nil", shape = "diamond", color = "#FFFFFF", fontcolor = "#000000"];
+}

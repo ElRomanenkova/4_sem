@@ -1,0 +1,7 @@
+digraph dump
+{
+	node [color = "#000000", shape = "box", fontsize = 20];
+	edge [color = "#000000", fontsize = 20];
+
+		root_nil [label = "root_nil", shape = "diamond", color = "#FFFFFF", fontcolor = "#000000"];
+}
