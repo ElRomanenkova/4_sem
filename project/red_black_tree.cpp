@@ -534,6 +534,15 @@ int RB_Tree::subtree_distruct(RB_Node * cur_root, RB_Node * cur_nil, size_t * co
     return ret;
 }
 
+int RB_Tree::foreach(int (*func)(RB_Tree *, RB_Node*, void*), void* data) {
+    if (this == nullptr || func == nullptr)
+        return BAD_ARGS;
+
+    int ret = call(this->root, func, data, this->num_nodes);
+
+    return ret;
+}
+
 int RB_Tree::call(RB_Node * node, int (*func)(RB_Tree *, RB_Node *, void *), void * data, size_t counter) {
     if (node == nullptr || this == nullptr || func == nullptr)
         return BAD_ARGS;
