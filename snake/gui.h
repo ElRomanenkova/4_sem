@@ -31,6 +31,8 @@ public:
     int miny();
     void sizeofwin();
 
+    void getkey(long time);
+
     void Xline(int y);
     void Yline(int x);
 

@@ -32,11 +32,6 @@ Gui::Gui() { //*******
     window.create(sf::VideoMode(1920,1080), "Snake");
     sizeofwin();
 
-//    font.loadFromFile("fonts/CyrilicOld.TTF");
-//    text.setFont(font);
-//    text.setCharacterSize(40);
-
-
     t_bort.loadFromFile("./images/bort.jpg");
     bort.setTexture(t_bort);
 
@@ -78,7 +73,6 @@ Gui::Gui() { //*******
 
 Gui::~Gui() {
     window.clear();
-    printf("Hvatit gamat, idi botay!\n");
 }
 
 
@@ -92,9 +86,6 @@ void Gui::Draw() { //**** some changes
             ground.setPosition(j * CELL_SIZE, i * CELL_SIZE);
             window.draw(ground);
         }
-//    text.setFillColor(sf::Color::Black);
-//    text.setString("Score : ");
-//    text.setPosition(0,0);
 
     Xline(0);
     Xline(miny() - 1);
@@ -115,7 +106,6 @@ void Gui::snakepainter(Coord c, Dir d) {  //*****
             head_h.setTextureRect(sf::IntRect(0, 0, 30, 30));
             head_h.setPosition(c.first * CELL_SIZE, c.second * CELL_SIZE);
             window.draw(head_h);
-//            return;
             break;
         }
 
@@ -123,7 +113,6 @@ void Gui::snakepainter(Coord c, Dir d) {  //*****
             head_h.setTextureRect(sf::IntRect(0, 30, 30, -30));
             head_h.setPosition(c.first * CELL_SIZE, c.second * CELL_SIZE);
             window.draw(head_h);
-//            return;
             break;
         }
 
@@ -140,14 +129,12 @@ void Gui::snakepainter(Coord c, Dir d) {  //*****
             head_l_h.setTextureRect(sf::IntRect(30, 0, -30, 30));
             head_l_h.setPosition(c.first * CELL_SIZE, c.second * CELL_SIZE);
             window.draw(head_l_h);
-//            return;
             break;
         }
 
         default: {
             body_h.setPosition(c.first * CELL_SIZE, c.second * CELL_SIZE);
             window.draw(body_h);
-//            return;
             break;
         }
 
@@ -166,7 +153,7 @@ void Gui::Xline(int y) {
     for (int i = 0; i < minx(); i ++) {
         bort.setPosition(i * CELL_SIZE, y * CELL_SIZE);
         window.draw(bort);
-        //printf("#");
+//        printf("#");
     }
 }
 
@@ -175,51 +162,102 @@ void Gui::Yline(int x) {
     for (int i = 1; i <= miny(); i ++) {
         bort.setPosition(x * CELL_SIZE, i * CELL_SIZE);
         window.draw(bort);
+//        printf("#");
     }
 }
 
-void Gui::Run() {
-    //printf("Hello, world. Snake\n");
+void Gui::getkey(long time) {
+
+    sf::Clock clock;
+    sf::Time timer = sf::microseconds(1000);
+    clock.restart();
+    timer = clock.getElapsedTime();
     char c;
+
+    sf::Event event;
+
+    while (timer.asMicroseconds() / 1000 < time) {
+
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right) || sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+            c = 'd';
+            onkey_delegater->onkey(c);
+//                return 1;
+        }
+
+        else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left) || sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+            c = 'a';
+            onkey_delegater->onkey(c);
+//                return 1;
+        }
+
+        else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+            c = 'q';
+//            return 0;
+        }
+
+        else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up) || sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
+            c = 's';
+            onkey_delegater->onkey(c);
+//                return 1;
+        }
+
+        else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down) || sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+            c = 'w';
+            onkey_delegater->onkey(c);
+//                return 1;
+        }
+
+        timer = clock.getElapsedTime();
+    }
+
+//    return 0;
+}
+
+void Gui::Run() {
+//    printf("Hello, world. Snake\n");
+//    char c;
     Draw();
 
     struct pollfd arr;
     struct timespec start_time, finish_time, worktime;
 
 
-    //int x = View::get()->x;
+//    int x = View::get()->x;
 
     while(window.isOpen()) {
         sf::Event event;
         while (window.pollEvent(event)) {
             if(event.type == sf::Event::Closed)
                 window.close();
+//            if (event.type == sf::Event::KeyPressed)
+//                if (event.key.code == sf::Keyboard::Q)
+//                    window.close();
         }
 
-        arr.fd = 0 ;
-        arr.events = POLLIN;
+//        arr.fd = 0 ;
+//        arr.events = POLLIN;
 
         clock_gettime(CLOCK_REALTIME,  &start_time);
-        int n = poll(&arr, 1, (int)ontime_deligater.front().first);
+        getkey((long)ontime_deligater.front().first);
         clock_gettime(CLOCK_REALTIME,  &finish_time);
 
-        if(n == 1) {
-            //printf("onkey\n");
-            read(arr.fd, &c, 1);
-            //Gotoxy(minx()/2, miny()/2);
-            if(c == 'q')    return;
-
-            onkey_delegater->onkey(c);
-        }
+//        if(n == 1) {
+//            //printf("onkey\n");
+//            read(arr.fd, &c, 1);
+//            //Gotoxy(minx()/2, miny()/2);
+//            if(c == 'q')    return;
+//
+//            onkey_delegater->onkey(c);
+//        }
 
         worktime.tv_sec = finish_time.tv_sec - start_time.tv_sec;
         worktime.tv_nsec = finish_time.tv_nsec - start_time.tv_nsec;
         int d = (int)(worktime.tv_sec * 1000) + (int)(worktime.tv_nsec / 1000000);
-        //ontime_deligater.front().first -= d;
-
-        //printf("time = %d\n", ontime_deligater.first);
-        //int i;
-        //scanf("%d", &i);
+//        ontime_deligater.front().first -= d;
+//
+//        printf("time = %d\n", ontime_deligater.first);
+//        int i;
+//        scanf("%d", &i);
 
 
         for(int i = 0; i < ontime_deligater.size(); i ++) {
@@ -240,11 +278,6 @@ void Gui::Run() {
             else ontime_deligater.push_back(a);
         }
 
-        //        int x, y;
-
-        /*if(ontime_deligater.front().first == 500)
-         {
-         */
         Draw();
         window.display();
     }

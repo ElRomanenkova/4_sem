@@ -98,8 +98,6 @@ private:
 #include <functional>
 
 
-//#include "ControlHuman.hpp"
-
 //using Coord = std::pair <int, int>;
 //using Rabbit = Coord;
 
@@ -148,7 +146,6 @@ public:
     std::list <Coord> body;
     void set_direction(Dir d);
     Dir dir;
-//    int brand;
 };
 
 
@@ -157,9 +154,6 @@ protected:
     Game();
 
 public:
-    enum {
-        MAX_RABBITS = 20,
-    };
 
     static Game * inst;
     static Game * get();

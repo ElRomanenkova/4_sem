@@ -45,7 +45,7 @@ int main() {
 
 //    View * v = View::get();
     Game * g = Game::get();
-//    Snake s;
+
     Snake * s = new Snake();
     Human h(s);
     Snake * s2 = new Snake();

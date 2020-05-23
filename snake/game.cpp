@@ -20,7 +20,7 @@ Game::Game()
 //    rabbits.push_back(r);
 
 
-    for(int i = 0; i < MAX_RABBITS; i ++) {
+    for(int i = 0; i < 15; i ++) {
         rabbitgenerate();
         View::get()->ontime_deligater.pop_back();
     }
@@ -31,20 +31,35 @@ Game::Game()
     t = {RAABBIT_TIME, 0};
     v->setontimer(t, std::bind(&Game::rabbitgenerate, this));
 
-//    snake_number = 5;
-
 }
 
 Snake::Snake() {
 
     alive = true;
     dir = UP;
-    Coord c = Game::get()->GetFreeCoord();
-    body.push_back(Coord(++c.first, c.second));
-    body.push_back(Coord(++c.first, c.second));
-    body.push_back(Coord(++c.first, c.second));
-    //body.push_back(Coord(++c.first, c.second));
-    //body.push_back(Coord(++c.first, c.second));
+//    Coord c = Game::get()->GetFreeCoord();
+    Coord c;
+
+//    while(1) {
+
+        c.first = rand() % View::get()->x;
+        c.second = rand() % View::get()->y;
+
+//        if(c.first == 0 || c.first == 1)    c.first += 5;// worktime.tv_nsec % rand() % View::get()->x;
+//        if(c.second == 0 || c.second == 1)   c.second += 5;// worktime.tv_nsec % View::get()->y;
+//
+//        if(c.first == View::get()->x - 1)     c.first -= 5;
+//        if(c.second == View::get()->y - 1)     c.second -= 5;
+
+//        if(checkplace(c)) {
+//            break;
+//        }
+//    }
+
+    for (int i = 0; i < 3; i++) {
+        body.push_back(Coord(++c.first, c.second));
+    }
+
 }
 
 void Snake::set_direction(Dir d) {
@@ -71,27 +86,27 @@ void Game::paint(SnakePainter ps, RabbbitPainter pr) {
     }
 }
 
-Coord Game::GetFreeCoord() {
-
-    Coord c;
-
-    while(1) {
-
-        c.first = rand() % View::get()->x;
-        c.second = rand() % View::get()->y;
-
-        if(c.first == 0 || c.first == 1)    c.first += 5;// worktime.tv_nsec % rand() % View::get()->x;
-        if(c.second == 0 || c.second == 1)   c.second += 5;// worktime.tv_nsec % View::get()->y;
-
-        if(c.first == View::get()->x - 1)     c.first -= 5;
-        if(c.second == View::get()->y - 1)     c.second -= 5;
-
-        if(checkplace(c)) {
-            return c;
-        }
-    }
-    return c;
-}
+//Coord Game::GetFreeCoord() {
+//
+//    Coord c;
+//
+//    while(1) {
+//
+//        c.first = rand() % View::get()->x;
+//        c.second = rand() % View::get()->y;
+//
+//        if(c.first == 0 || c.first == 1)    c.first += 5;// worktime.tv_nsec % rand() % View::get()->x;
+//        if(c.second == 0 || c.second == 1)   c.second += 5;// worktime.tv_nsec % View::get()->y;
+//
+//        if(c.first == View::get()->x - 1)     c.first -= 5;
+//        if(c.second == View::get()->y - 1)     c.second -= 5;
+//
+//        if(checkplace(c)) {
+//            return c;
+//        }
+//    }
+//    return c;
+//}
 
 
 Game * Game::inst;
@@ -104,11 +119,8 @@ Game * Game::get() {
 }
 
 
-void Game::add(Snake * s)
-{
-//    s -> brand = snake_number;
+void Game::add(Snake * s) {
     snakes.push_back(s);
-//    snake_number++;
 }
 
 void Game::move() {
@@ -126,8 +138,6 @@ void Game::move() {
     }
 
     View::get()->AI_deligater->OnMove();
-//    View::get()->AI_delegater_clever->on_move_clever();
-
 
     for(auto s: snakes)
         if(s->alive)
@@ -166,24 +176,6 @@ void Game::rabbitgenerate() {
         }
     }
 }
-
-bool Game::checkplace(Coord c) {
-    for(const auto s : snakes)
-        for(const auto & sb : s->body)
-            if(c == sb) return false;
-
-    for(const auto & r : rabbits)
-        if(c == r) return false;
-
-    if(c.first >= 0 && c.first <= 1)    return false;
-    if(c.second >= 0 && c.second <= 1)   return false;
-
-    if(c.first >= View::get()->x - 1)     return false;
-    if(c.second >= View::get()->y - 1)     return false;
-
-    return true;
-}
-
 
 Coord Game::near(Coord c) {
 
@@ -233,6 +225,23 @@ char Game::checkplacesnake(Coord c)
     return ' ';
 }
 
+bool Game::checkplace(Coord c) {
+    for(const auto s : snakes)
+        for(const auto & sb : s->body)
+            if(c == sb) return false;
+
+    for(const auto & r : rabbits)
+        if(c == r) return false;
+
+    if(c.first >= 0 && c.first <= 1)    return false;
+    if(c.second >= 0 && c.second <= 1)   return false;
+
+    if(c.first >= View::get()->x - 1)     return false;
+    if(c.second >= View::get()->y - 1)     return false;
+
+    return true;
+}
+
 void Game::KillRabbit(Coord c) {
 
     for(const auto & r : rabbits)
@@ -261,12 +270,10 @@ void Snake::move() {
 
         case 's':
             alive = false;
-            //View::get()->~View();
             break;
 
         case 'b':
             alive = false;
-            //View::get()->~View();
             break;
 
         case 'r': {
@@ -285,12 +292,10 @@ Coord Snake::NextPosition(Dir d, Coord a) {
 
     switch (d) {
         case UP:
-//            a.second --;
             a.second ++;
             break;
 
         case DOWN:
-//            a.second ++;
             a.second --;
             break;
 

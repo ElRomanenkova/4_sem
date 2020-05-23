@@ -20,7 +20,6 @@ Control::Control(Snake * s)
 {
     //View * v = View::get();
     snake = s;
-//    snake -> brand = 0;
 }
 
 Control::~Control()

@@ -36,13 +36,11 @@ void AI::OnMove() const {
     if(r != Coord(0, 0)){
         int now = r.distance(snake->body.front());
 
-        for(auto p : d)
-        {
+        for(auto p : d) {
             snake->dir = p;
             char next_p = game->checkplacesnake(snake->NextPosition(p, snake->body.front()));
             int next = r.distance(snake->NextPosition(p, snake->body.front()));
-            if(next < now && (next_p == ' ' || next_p == 'r'))
-            {
+            if(next < now && (next_p == ' ' || next_p == 'r')) {
                 ok = true;
                 break;
             }
@@ -54,8 +52,7 @@ void AI::OnMove() const {
         {
             snake->dir = p;
             Coord c = snake->NextPosition(p, snake->body.front());
-            if(game->checkplacesnake(c) == ' ')
-            {
+            if(game->checkplacesnake(c) == ' ') {
                 //snake->dir = p;
                 break;
             }
